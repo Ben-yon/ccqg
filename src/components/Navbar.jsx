@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Link } from 'react-router-dom';
 import { logo } from '../assets'
+import { navLinks } from "../constants";
 
 
 const Navbar = () => {
@@ -19,10 +20,21 @@ const Navbar = () => {
                     window.scrollTo(0, 0)
                  }}
                 >
-                 <img src={logo} alt="LOGO"/>
+                 <img src={logo} alt="LOGO" className="w-12 h-12 object-contain"/>
                 </Link>
                 <ul className="list-none hidden sm:flex flex-row gap-10">
-                    { }
+                    { navLinks.map((link) => (
+                        <li 
+                            key={link.id}
+                            className={`${
+                                active === link.title
+                                ? "text-white"
+                                : "text-secondary"
+                            } hover:text-white text-[18px] font-medium cursor-pointer`}
+                        >
+                            { link.title }
+                        </li>
+                    )) }
                 </ul>
             </div>
         </nav>
