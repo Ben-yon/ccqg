@@ -1,21 +1,34 @@
-import { useState } from 'react'
-import { BrowserRouter } from 'react-router-dom';
-import { Navbar, FlagWidget, FlagOptions } from './components';
-import './App.css'
+import { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Navbar, FlagWidget, FlagOptions } from "./components";
+import { countries } from "./countries";
+import { randomizItems, imageURLPath } from "./utils";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [answer, setAnswer] = useState(0);
+
+  
+
+  // useEffect()
 
   return (
     <BrowserRouter>
       <>
-        <Navbar/>
-        <FlagWidget/>
-        <FlagOptions/>
+        <div>
+          <Navbar />
+        </div>
+        <div>
+          <FlagWidget
+            countries={countries}
+          />
+        </div>
+        <div className="flex justify-center items-center ">
+          <FlagOptions countries={countries} />
+        </div>
       </>
     </BrowserRouter>
-  
-  )
+  );
 }
 
-export default App
+export default App;
