@@ -4,7 +4,9 @@ import { randomizItems } from "../utils";
 
 const FlagOptions = ({countries}) => {
     const [ selectedOption, setSelectedOption ] = useState('')
+    
     const [ options, setOptions ] = useState([]);
+
     const handleChangeOption = (e) => {
         setSelectedOption(e.target.value)
     }

@@ -6,14 +6,22 @@ const FlagWidget = ({countries}) => {
   
     
     useEffect(() => {
-        const randomImages = randomizItems(countries)
-        let country_code = randomImages.slice(0, 1)[0].code;
+        randomizeImage();
+
+        const interval = setInterval(randomizeImage, 10000)
+
         return () =>{
-            setCurrentFlagUrl(country_code);
+            clearInterval(interval);
         }
     }
     , [countries]
-    )
+    );
+
+    const randomizeImage = () => {
+        const randomImages = randomizItems(countries)
+        let country_code = randomImages.slice(0, 1)[0].code;
+        setCurrentFlagUrl(country_code);
+    }
     
     return (
         <div className="relative left-[450px] w-[900px] h-[800px] mt-36">

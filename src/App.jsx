@@ -3,10 +3,15 @@ import { BrowserRouter } from "react-router-dom";
 import { Navbar, FlagWidget, FlagOptions } from "./components";
 import { countries } from "./countries";
 import { randomizItems, imageURLPath } from "./utils";
+import Confetti from 'react-confetti';
+
 import "./App.css";
 
 function App() {
   const [answer, setAnswer] = useState(0);
+  const [UIprops, SetUIprops] = useState({
+    setConfetti: true
+  })
 
   
 
@@ -15,8 +20,9 @@ function App() {
   return (
     <BrowserRouter>
       <>
+        {UIprops.setConfetti && <Confetti/>}
         <div>
-          <Navbar />
+          <Navbar />        
         </div>
         <div>
           <FlagWidget
