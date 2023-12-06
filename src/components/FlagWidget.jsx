@@ -24,9 +24,9 @@ const FlagWidget = ({countries}) => {
     }
     
     return (
-        <div className="relative left-[450px] w-[900px] h-[800px] mt-36">
+        <div className="max-w-[33.3%] mt-36">
             <img src={`${imageURLPath}${currentFlagUrl.toLowerCase()}.png`} alt="FLAG" 
-                className="rounded object-fill cursor-pointer backdrop-blur-xl"
+                className="rounded-2xl mr-auto ml-auto block object-fill cursor-pointer backdrop-blur-xl"
             />
         </div>
     )

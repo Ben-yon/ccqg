@@ -24,12 +24,10 @@ function App() {
         <div>
           <Navbar />        
         </div>
-        <div>
-          <FlagWidget
-            countries={countries}
-          />
-        </div>
-        <div className="flex justify-center items-center ">
+        <div className="flex flex-col justify-center items-center">
+            <FlagWidget
+              countries={countries}
+            />
           <FlagOptions countries={countries} />
         </div>
       </>
